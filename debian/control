@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-cam3d-throttle
+Section: misc
+Priority: extra
+Maintainer: Georg Arbeiter <goa@ipa.fhg.de>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin, ros-hydro-message-filters, ros-hydro-nodelet, ros-hydro-pluginlib, ros-hydro-roscpp, ros-hydro-sensor-msgs
+Homepage: http://ros.org/wiki/cob_cam3d_throttle
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-cam3d-throttle
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-message-filters, ros-hydro-nodelet, ros-hydro-pluginlib, ros-hydro-roscpp, ros-hydro-sensor-msgs
+Description: cob_cam3d_throttle: only for Trottel
