@@ -1,0 +1,22 @@
+ros-hydro-cob-hwboard (0.5.2-1raring) raring; urgency=high
+
+
+
+ -- Eduard Herkel <uhr-eh@ipa.fhg.de>  Wed, 19 Mar 2014 23:00:00 -0000
+
+ros-hydro-cob-hwboard (0.5.1-1raring) raring; urgency=high
+
+  * cleaned up CMakeLists and added install directives
+  * compiling but still some linker errors
+  * Second catkinization push
+  * First catkinization, still need to update some CMakeLists.txt
+  * hwboard updated
+  * updated some error messages
+  * hwboard updated
+  * updated hwboard
+  * added cob_hwboard
+  * Contributors: Alexander Bubeck, abubeck, ipa-uhr-eh
+
+ -- Eduard Herkel <uhr-eh@ipa.fhg.de>  Wed, 19 Mar 2014 23:00:00 -0000
+
+
