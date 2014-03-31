@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-trajectory-controller
+Section: misc
+Priority: extra
+Maintainer: Alexander Bubeck <aub@ipa.fhg.de>
+Build-Depends: debhelper (>= 7.0.50~), libeigen3-dev, ros-hydro-actionlib, ros-hydro-brics-actuator, ros-hydro-catkin, ros-hydro-cob-srvs, ros-hydro-control-msgs, ros-hydro-geometry-msgs, ros-hydro-message-generation, ros-hydro-orocos-kdl, ros-hydro-roscpp, ros-hydro-sensor-msgs, ros-hydro-std-msgs
+Homepage: http://ros.org/wiki/cob_trajectory_controller
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-trajectory-controller
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-actionlib, ros-hydro-brics-actuator, ros-hydro-cob-srvs, ros-hydro-control-msgs, ros-hydro-geometry-msgs, ros-hydro-message-runtime, ros-hydro-orocos-kdl, ros-hydro-roscpp, ros-hydro-sensor-msgs, ros-hydro-std-msgs
+Description: This package provides a trajectory controller which controlls velocities for a chain of joints. This controller can be used e.g. with [[schunk_powercube_chain]].
