@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-collision-velocity-filter
+Section: misc
+Priority: extra
+Maintainer: Matthias Gruhler <mig@ipa.fhg.de>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin, ros-hydro-cob-footprint-observer, ros-hydro-dynamic-reconfigure, ros-hydro-nav-msgs, ros-hydro-roscpp, ros-hydro-rospy, ros-hydro-tf, ros-hydro-visualization-msgs
+Homepage: http://ros.org/wiki/cob_collision_velocity_filter
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-collision-velocity-filter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-cob-footprint-observer, ros-hydro-dynamic-reconfigure, ros-hydro-move-base-msgs, ros-hydro-nav-msgs, ros-hydro-roscpp, ros-hydro-rospy, ros-hydro-tf, ros-hydro-visualization-msgs
+Description: The cob_collision_velocity_filter package is a package for collision avoidance using teleoperation.
