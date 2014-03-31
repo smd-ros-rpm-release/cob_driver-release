@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-base-velocity-smoother
+Section: misc
+Priority: extra
+Maintainer: Florian Mirus <frm@ipa.fhg.de>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin, ros-hydro-geometry-msgs, ros-hydro-roscpp, ros-hydro-std-msgs
+Homepage: http://ros.org/wiki/cob_base_velocity_smoother
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-base-velocity-smoother
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-geometry-msgs, ros-hydro-roscpp, ros-hydro-std-msgs
+Description: The 'cob_base_velocity_smoother' reads velocity messages and publishes messages of the same type for &quot;smoothed&quot; velocity to avoid shaking behavior.
