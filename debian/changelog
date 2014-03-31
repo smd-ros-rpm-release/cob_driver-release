@@ -1,0 +1,26 @@
+ros-hydro-cob-utilities (0.5.3-0quantal) quantal; urgency=high
+
+  * install tags
+  * Contributors: ipa-fxm
+
+ -- Matthias Gruhler <mig@ipa.fhg.de>  Sun, 30 Mar 2014 22:00:00 -0000
+
+ros-hydro-cob-utilities (0.5.2-0quantal) quantal; urgency=high
+
+
+
+ -- Christian Connette <cpc@ipa.fhg.de>  Wed, 19 Mar 2014 23:00:00 -0000
+
+ros-hydro-cob-utilities (0.5.1-0quantal) quantal; urgency=high
+
+  * cleaned up CMakeLists and added install directives
+  * futher include and linkpath modifications
+  * compiling but still some linker errors
+  * Second catkinization push
+  * First catkinization, still need to update some CMakeLists.txt
+  * moved to cob_driver
+  * Contributors: Alexander Bubeck, abubeck, ipa-fmw
+
+ -- Christian Connette <cpc@ipa.fhg.de>  Wed, 19 Mar 2014 23:00:00 -0000
+
+
