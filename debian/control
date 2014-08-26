@@ -1,0 +1,12 @@
+Source: ros-indigo-cob-generic-can
+Section: misc
+Priority: extra
+Maintainer: Matthias Gruhler <mig@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin, ros-indigo-cob-utilities, ros-indigo-libntcan, ros-indigo-libpcan, ros-indigo-roscpp
+Homepage: http://ros.org/wiki/cob_generic_can
+Standards-Version: 3.9.2
+
+Package: ros-indigo-cob-generic-can
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-cob-utilities, ros-indigo-libntcan, ros-indigo-libpcan, ros-indigo-roscpp
+Description: The package cob_generic_can provides an interface for nodes on a can-bus and examplary wrappers for two PeakSys-can-libs. When a can-bus-device is generated (for an example see base_dirve_chain) you can use generic_can to create as many itfs as there will be components communicating via this can-bus. Assign type of the can communication device (e.g. usb-to-can or can-card of a specific vendor) and can-address of the target device. This package comes with wrappers for PeakSys and PeakSysUSB adapters.
