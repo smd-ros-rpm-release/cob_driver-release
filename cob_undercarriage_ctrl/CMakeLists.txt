@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_undercarriage_ctrl)
 
-find_package(catkin REQUIRED COMPONENTS roscpp nav_msgs sensor_msgs geometry_msgs diagnostic_msgs tf cob_relayboard cob_utilities diagnostic_updater control_msgs)
+find_package(catkin REQUIRED COMPONENTS roscpp nav_msgs geometry_msgs diagnostic_msgs tf cob_msgs cob_utilities diagnostic_updater control_msgs)
 
 
 ###################################
@@ -10,7 +10,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp nav_msgs sensor_msgs geometry_msg
 ###################################
 
 catkin_package(
-    CATKIN_DEPENDS roscpp nav_msgs sensor_msgs geometry_msgs diagnostic_msgs tf cob_relayboard cob_utilities diagnostic_updater
+    CATKIN_DEPENDS roscpp nav_msgs geometry_msgs diagnostic_msgs tf cob_msgs cob_utilities diagnostic_updater
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO
 )
@@ -48,9 +48,4 @@ install(TARGETS ${PROJECT_NAME}_node ${PROJECT_NAME}
 
 install(DIRECTORY common/include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-)
-
-## Mark cpp header files for installation
-install(DIRECTORY ros/launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/launch
 )
