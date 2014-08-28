@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-relayboard
+Section: misc
+Priority: extra
+Maintainer: Matthias Gruhler <mig@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-hydro-catkin, ros-hydro-cob-utilities, ros-hydro-message-generation, ros-hydro-pr2-msgs, ros-hydro-roscpp, ros-hydro-rostest, ros-hydro-std-msgs
+Homepage: http://ros.org/wiki/cob_relayboard
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-relayboard
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-cob-utilities, ros-hydro-message-runtime, ros-hydro-pr2-msgs, ros-hydro-roscpp, ros-hydro-rostest, ros-hydro-std-msgs
+Description: cob_relayboard
