@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-sick-s300
+Section: misc
+Priority: extra
+Maintainer: Florian Weisshardt <fmw@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-hydro-catkin, ros-hydro-diagnostic-msgs, ros-hydro-laser-geometry, ros-hydro-message-filters, ros-hydro-roscpp, ros-hydro-rostest, ros-hydro-sensor-msgs, ros-hydro-tf, ros-hydro-tf2-ros
+Homepage: http://ros.org/wiki/cob_sick_s300
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-sick-s300
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-diagnostic-msgs, ros-hydro-laser-geometry, ros-hydro-message-filters, ros-hydro-roscpp, ros-hydro-rostest, ros-hydro-sensor-msgs, ros-hydro-tf, ros-hydro-tf2-ros
+Description: This package published a laser scan message out of a Sick S300 laser scanner.
