@@ -58,13 +58,11 @@
 // base classes
 #include <string>
 #include <vector>
-#include <map>
 #include <iostream>
 #include <math.h>
 #include <stdio.h>
 
 #include <cob_sick_s300/SerialIO.h>
-#include <cob_sick_s300/TelegramS300.h>
 
 /** 
  * Driver class for the laser scanner SICK S300 Professional.
@@ -108,7 +106,9 @@ public:
 	// set of parameters which are specific to the SickS300
 	struct ParamType
 	{
-		int range_field; //measurement range (1 to 5) --> usually 1 (default)
+		int iDataLength;	// length of data telegram
+		int iHeaderLength;	// length of telegram header
+		int iNumScanPoints;	// number of measurements in the scan
 		double dScale;		// scaling of the scan (multiply with to get scan in meters)
 		double dStartAngle;	// scan start angle
 		double dStopAngle;	// scan stop angle
@@ -142,6 +142,7 @@ public:
 	 * @param iScanId the scanner id in the data header (7 by default)
 	 */
 	bool open(const char* pcPort, int iBaudRate, int iScanId);
+	//bool open(char* pcPort, int iBaudRate);
 
 	// not implemented
 	void resetStartup();
@@ -155,9 +156,13 @@ public:
 
 	void purgeScanBuf();
 
-	bool getScan(std::vector<double> &vdDistanceM, std::vector<double> &vdAngleRAD, std::vector<double> &vdIntensityAU, unsigned int &iTimestamp, unsigned int &iTimeNow, const bool debug);
+	bool getScan(std::vector<double> &vdDistanceM, std::vector<double> &vdAngleRAD, std::vector<double> &vdIntensityAU, unsigned int &iTimestamp, unsigned int &iTimeNow);
+	//sick_lms.GetSickScan(values, num_values);
 
-	void setRangeField(const int field, const ParamType &param) {m_Params[field] = param;}
+	// add sick_lms.GetSickScanResolution();
+
+	// add sick_lms.GetSickMeasuringUnits();
+
 
 private:
 
@@ -165,8 +170,7 @@ private:
 	static const double c_dPi;
 
 	// Parameters
-	typedef std::map<int, ParamType> PARAM_MAP;
-	PARAM_MAP m_Params;
+	ParamType m_Param;
 	double m_dBaudMult;
 
 	// Variables
@@ -180,10 +184,9 @@ private:
 
 	// Components
 	SerialIO m_SerialIO;
-	TelegramParser tp_;
 
 	// Functions
-	void convertScanToPolar(const PARAM_MAP::const_iterator param, std::vector<int> viScanRaw,
+	void convertScanToPolar(std::vector<int> viScanRaw,
 							std::vector<ScanPolarType>& vecScanPolar);
 
 };

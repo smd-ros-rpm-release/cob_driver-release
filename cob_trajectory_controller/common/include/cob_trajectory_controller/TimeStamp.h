@@ -9,16 +9,15 @@
  *
  * Project name: care-o-bot
  * ROS stack name: cob_driver
- * ROS package name: cob_light
- * Description: Switch robots led color by sending data to
- * the led-µC over serial connection.
+ * ROS package name: cob_powercube_chain
+ * Description:
  *								
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  *			
- * Author: Benjamin Maidel, email:benjamin.maidel@ipa.fraunhofer.de
- * Supervised by: Benjamin Maidel, email:benjamin.maidel@ipa.fraunhofer.de
+ * Author: Felix Geibel, email:Felix.Geibel@gmx.de
+ * Supervised by: Alexander Bubeck, email:alexander.bubeck@ipa.fhg.de
  *
- * Date of creation: August 2012
+ * Date of creation: Aug 2007
  * ToDo:
  *
  * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -51,32 +50,74 @@
  * If not, see <http://www.gnu.org/licenses/>.
  *
  ****************************************************************/
+#ifndef _TimeStamp_H
+#define _TimeStamp_H
 
-#ifndef ES35_H
-#define ES35_H
+#include <time.h>
 
-#include <iColorO.h>
+//-------------------------------------------------------------------
 
-#include <serialIO.h>
-#include <colorUtils.h>
-#include <sstream>
-
-class MS35 : public IColorO
+ 
+/** Measure system time with very high accuracy.
+ * Use this class for measure system time accurately. Under Windows, it uses 
+ * QueryPerformanceCounter(), which has a resolution of approx. one micro-second.
+ * The difference between two time stamps can be calculated.
+ */
+class TimeStamp
 {
 public:
-	MS35(SerialIO* serialIO);
-	virtual ~MS35();
+	/// Constructor.
+	TimeStamp();
 
-	void setColor(color::rgba color);
+	/// Destructor.
+	virtual ~TimeStamp() {};
+
+	/// Makes time measurement.
+	void SetNow();
+
+	/// Retrieves time difference in seconds.
+	double operator-(const TimeStamp& EarlierTime) const;
+
+	/// Increase the timestamp by TimeS seconds.
+	/** @param TimeS must be >0!.
+	 */
+	void operator+=(double TimeS);
+
+	/// Reduces the timestamp by TimeS seconds.
+	/** @param TimeS must be >0!.
+	 */
+	void operator-=(double TimeS);
+
+	/// Checks if this time is after time "Time".
+	bool operator>(const TimeStamp& Time);
+
+	/// Checks if this time is before time "Time".
+	bool operator<(const TimeStamp& Time);
+	
+	/**
+	 * Gets seconds and nanoseconds of the timestamp.
+	 */
+	void getTimeStamp(long& lSeconds, long& lNanoSeconds);
+
+	/**
+	 * Sets timestamp from seconds and nanoseconds.
+	 */
+	void setTimeStamp(const long& lSeconds, const long& lNanoSeconds);
+	
+
+protected:
+
+	/// Internal time stamp data.
+	timespec m_TimeStamp;
 	
 private:
-	SerialIO* _serialIO;
-	std::stringstream _ssOut;
-	static const int PACKAGE_SIZE = 9;
-	char buffer[PACKAGE_SIZE];
 
-	int sendData(const char* data, size_t len);
-	unsigned short int getChecksum(const char* data, size_t len);
+	/// Conversion timespec -> double
+	static double TimespecToDouble(const ::timespec& LargeInt);
+
+	/// Conversion double -> timespec
+	static ::timespec DoubleToTimespec(double TimeS);
+
 };
 
 #endif

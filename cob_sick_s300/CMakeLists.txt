@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_sick_s300)
 
-find_package(catkin REQUIRED COMPONENTS roscpp sensor_msgs diagnostic_msgs)
+find_package(catkin REQUIRED COMPONENTS roscpp rostest sensor_msgs message_filters diagnostic_msgs tf tf2_ros laser_geometry)
 
 ###################################
 ## catkin specific configuration ##
 ###################################
 catkin_package(
-    CATKIN_DEPENDS roscpp sensor_msgs diagnostic_msgs
+    CATKIN_DEPENDS roscpp rostest sensor_msgs message_filters diagnostic_msgs tf tf2_ros laser_geometry
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO
 )
@@ -24,6 +24,7 @@ SET(OODL_SickS300_SRC
  # ${PROJECT_SOURCE_DIR}/common/src/LaserScannerData.cpp
   ${PROJECT_SOURCE_DIR}/common/src/LaserScannerConfiguration.cpp
  # ${PROJECT_SOURCE_DIR}/common/src/LaserScannerDataWithIntensities.cpp
+  ${PROJECT_SOURCE_DIR}/common/src/SickS300.cpp
   ${PROJECT_SOURCE_DIR}/common/src/ScannerSickS300.cpp
   ${PROJECT_SOURCE_DIR}/common/src/SerialIO.cpp
 )

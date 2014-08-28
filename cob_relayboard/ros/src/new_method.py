@@ -3,10 +3,10 @@ import roslib; roslib.load_manifest('cob_relayboard')
 import rospy
 import time
 import csv
-from cob_msgs.msg import EmergencyStopState
+from cob_relayboard.msg import EmergencyStopState
 from std_msgs.msg import Float64
 import savizky
-#from cob_msgs.msg import PowerState
+#from pr2_msgs.msg import PowerState
 
 class volts_filter():
     
@@ -54,9 +54,9 @@ class volts_filter():
 	
 if __name__ == '__main__':
     rospy.init_node('volt_filt')
-    vf = volts_filter()
-
-    while not rospy.is_shutdown():
-        rospy.sleep(1.0)
+	vf = volts_filter()
+	
+	while not rospy.is_shutdown():
+		rospy.sleep(1.0)
 
 

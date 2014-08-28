@@ -129,7 +129,7 @@ int main(int argc, char **argv)
     scan_msg.ranges.resize(num_values);
     scan_msg.intensities.resize(num_values);
 
-    if(not inverted)
+    if(inverted)
       scan_msg.time_increment *= -1.;
 
     //set scandata config
@@ -172,13 +172,18 @@ int main(int argc, char **argv)
       {
         for (int i = 0; i < data.dist_len1; i++)
         {
-          if(not inverted) {
+          if(inverted)
             scan_msg.ranges[i] = data.dist1[data.dist_len1-1-i] * 0.001;
-	    scan_msg.intensities[i] = data.rssi1[data.rssi_len1-1-i];
-	  } else {
+          else
             scan_msg.ranges[i] = data.dist1[i] * 0.001;
-	    scan_msg.intensities[i] = data.rssi1[i];
-	  }
+        }
+
+        for (int i = 0; i < data.rssi_len1; i++)
+        {
+          if(inverted)
+            scan_msg.intensities[i] = data.rssi1[data.rssi_len1-1-i];
+          else
+            scan_msg.intensities[i] = data.rssi1[i];
         }
 
         scan_pub.publish(scan_msg);
