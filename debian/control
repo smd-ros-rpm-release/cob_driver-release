@@ -1,0 +1,12 @@
+Source: ros-hydro-cob-head-axis
+Section: misc
+Priority: extra
+Maintainer: Matthias Gruhler <mig@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-hydro-actionlib, ros-hydro-catkin, ros-hydro-cob-canopen-motor, ros-hydro-cob-generic-can, ros-hydro-cob-srvs, ros-hydro-cob-utilities, ros-hydro-control-msgs, ros-hydro-diagnostic-msgs, ros-hydro-libntcan, ros-hydro-roscpp, ros-hydro-sensor-msgs, ros-hydro-urdf
+Homepage: http://ros.org/wiki/cob_head_axis
+Standards-Version: 3.9.2
+
+Package: ros-hydro-cob-head-axis
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-actionlib, ros-hydro-cob-canopen-motor, ros-hydro-cob-generic-can, ros-hydro-cob-srvs, ros-hydro-cob-utilities, ros-hydro-control-msgs, ros-hydro-diagnostic-msgs, ros-hydro-libntcan, ros-hydro-roscpp, ros-hydro-rostest, ros-hydro-sensor-msgs, ros-hydro-urdf
+Description: cob_head_axis
