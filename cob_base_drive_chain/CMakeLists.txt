@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(cob_base_drive_chain)
 
 
-find_package(catkin REQUIRED COMPONENTS roscpp std_msgs geometry_msgs sensor_msgs message_generation diagnostic_msgs cob_srvs cob_generic_can cob_canopen_motor cob_utilities libpcan libntcan control_msgs)
+find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sensor_msgs message_generation diagnostic_msgs cob_srvs cob_generic_can cob_canopen_motor cob_utilities libpcan libntcan control_msgs)
 
 #######################################
 ## Declare ROS messages and services ##
@@ -16,7 +16,7 @@ add_service_files(
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
-  DEPENDENCIES geometry_msgs std_msgs
+  DEPENDENCIES std_msgs
 )
 
 ###################################
@@ -24,7 +24,7 @@ generate_messages(
 ###################################
 
 catkin_package(
-    CATKIN_DEPENDS roscpp control_msgs cob_generic_can cob_canopen_motor cob_utilities libpcan  std_msgs geometry_msgs sensor_msgs diagnostic_msgs cob_srvs message_runtime
+    CATKIN_DEPENDS roscpp control_msgs cob_generic_can cob_canopen_motor cob_utilities libpcan  std_msgs sensor_msgs diagnostic_msgs cob_srvs message_runtime
     INCLUDE_DIRS common/include
     LIBRARIES ${PROJECT_NAME}
 )
@@ -64,9 +64,4 @@ install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node ${PROJECT_NAME}_sim_node
 
 install(DIRECTORY common/include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-)
-
-## Mark lauch files for installation
-install(DIRECTORY ros/launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros
 )
