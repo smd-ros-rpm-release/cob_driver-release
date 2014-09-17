@@ -1,0 +1,12 @@
+Source: ros-indigo-cob-relayboard
+Section: misc
+Priority: extra
+Maintainer: Matthias Gruhler <mig@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin, ros-indigo-cob-msgs, ros-indigo-cob-utilities, ros-indigo-roscpp, ros-indigo-rostest, ros-indigo-std-msgs
+Homepage: http://ros.org/wiki/cob_relayboard
+Standards-Version: 3.9.2
+
+Package: ros-indigo-cob-relayboard
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-cob-msgs, ros-indigo-cob-utilities, ros-indigo-roscpp, ros-indigo-rostest, ros-indigo-std-msgs
+Description: cob_relayboard
