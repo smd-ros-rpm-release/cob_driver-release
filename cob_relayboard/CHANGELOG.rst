@@ -2,6 +2,9 @@
 Changelog for package cob_relayboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.2 (2014-12-15)
+------------------
+
 0.6.1 (2014-09-17)
 ------------------
 * Deleted CurrentMeasurement.msg
