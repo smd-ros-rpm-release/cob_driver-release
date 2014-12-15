@@ -1,0 +1,12 @@
+Source: ros-indigo-cob-sound
+Section: misc
+Priority: extra
+Maintainer: Nadia Hammoudeh Garcia <nhg@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-actionlib, ros-indigo-actionlib-msgs, ros-indigo-catkin, ros-indigo-cob-srvs, ros-indigo-diagnostic-msgs, ros-indigo-message-generation, ros-indigo-roscpp, ros-indigo-rospy, ros-indigo-std-msgs
+Homepage: http://ros.org/wiki/cob_sound
+Standards-Version: 3.9.2
+
+Package: ros-indigo-cob-sound
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-actionlib, ros-indigo-actionlib-msgs, ros-indigo-cob-srvs, ros-indigo-diagnostic-msgs, ros-indigo-message-runtime, ros-indigo-roscpp, ros-indigo-rospy, ros-indigo-sound-play, ros-indigo-std-msgs
+Description: This package implements a sound play module using text2wave and aplay through python.
