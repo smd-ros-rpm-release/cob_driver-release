@@ -1,0 +1,12 @@
+Source: ros-indigo-cob-canopen-motor
+Section: misc
+Priority: extra
+Maintainer: Matthias Gruhler <mig@ipa.fhg.de>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin, ros-indigo-cob-generic-can, ros-indigo-cob-utilities, ros-indigo-roscpp
+Homepage: http://ros.org/wiki/cob_canopen_motor
+Standards-Version: 3.9.2
+
+Package: ros-indigo-cob-canopen-motor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-cob-generic-can, ros-indigo-cob-utilities, ros-indigo-roscpp
+Description: The package cob_canopen_motor implements a controller-drive component which is connected to a can-bus and works with a canopen-interface. &quot;CanDriveItf&quot; provides a - more or less - generic interface to the controller-drive components. &quot;CanDrvie...&quot; then implements a specific setup, e.g. an ELMO Harmonica Controller in case of the &quot;CanDriveHarmonica&quot;.
